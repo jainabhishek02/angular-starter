@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('hog-web App', () => {
+describe('angular-starter App', () => {
   let page: AppPage;
 
   beforeEach(() => {
