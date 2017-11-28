@@ -1,0 +1,39 @@
+/**
+Overriding form styles
+
+*/
+
+.form-control{
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  border: 1px solid @pallet-border-primary;
+  &.lg {
+    height:60px;
+    font-size: @font-price;
+  }
+}
+.input-group {
+  display: table;
+  width:100%;
+
+  .form-control {
+    display: table-cell;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    vertical-align: middle;
+    //border: none;
+  }
+  .input-btn {
+    display: table-cell;
+    width: 1%;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+}
+
+.err-border {
+  &input, &.form-control{
+    border: 1px solid @pallet-border-error;
+  }
+}

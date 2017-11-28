@@ -1,0 +1,124 @@
+ul.list, ol.list, ul.horizontal-nav ul.nav{
+  list-style: none;
+  border:1px solid @pallet-border-primary;
+  border-left:0;
+  border-right:0;
+  padding:0;
+
+  > li {
+    border-bottom : 1px solid @pallet-border-primary;
+    padding:@padding-base;
+    background-color: @pallet-background-light;
+
+    &.head {
+      background-color: @pallet-background-special;
+      color: @pallet-color-light;
+    }
+
+    &:last-child {
+      border-bottom : 0;
+    }
+    > a{
+      display: block;
+      padding:@padding-base;
+    }
+  }
+  &.alternate {
+    > li:nth-child(odd) {
+      background: darken(@pallet-background-light,10%);
+      &.head {
+        background-color: @pallet-background-special;
+        color: @pallet-color-light;
+      }
+    }
+  }
+  &.links {
+    border:none;
+    margin-bottom: @multiplier-huge*@margin-large;
+
+    > li {
+      border-bottom : none;
+      background-color: inherit;
+
+      > a{
+        display: block;
+        padding:@padding-base;
+        position: relative;
+        &:hover {
+          color: @pallet-color-link;
+          &:after {
+            display: inline-block;
+          }
+        }
+        &:after {
+          display: none;
+          content: '';
+          height: 10px;
+          width: 10px;
+          border: 1px solid @pallet-border-primary;
+          border-width: 0 1px 1px 0;
+          transform: rotate(-45deg);
+          position: absolute;
+          right: -10px;
+          top:25%;
+        }
+      }
+    }
+  }
+}
+ul.nav.list {
+  border: none;
+  font-size: @font-large;
+  margin: @margin-medium 0;
+  &.dark {
+    > li {
+      background: lighten(@pallet-background-footer, 5%);
+      > a {
+        color: @pallet-color-light;
+      }
+    }
+  }
+  &.short {
+    > li {
+      width: 202px;
+    }
+  }
+  > li {
+    display: inline-block;
+    width: 234px;
+    text-align: center;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s 0s ease-out;
+    &:hover {
+      border-color:@pallet-theme;
+    }
+    &:last-child {
+      border-bottom-width: 2px;
+    }
+    > a {
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+
+  }
+}
+ul.horizontal-nav {
+  background-color: @pallet-background-light;
+
+  > li {
+    display: inline-block;
+    min-width: 200px;
+    background-color: @pallet-background-light;
+    text-align: center;
+    border: none;
+
+    > a{
+      padding: @padding-medium 0;
+      display: block;
+      &:hover {
+        color: @pallet-color-link;
+      }
+    }
+  }
+}

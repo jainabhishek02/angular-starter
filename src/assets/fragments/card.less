@@ -1,0 +1,72 @@
+@import "../variables";
+
+.card {
+  margin-bottom: @margin-large;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  position: relative;
+  background: @pallet-background-light;
+  box-shadow: 0 0 0 1px @pallet-border-primary;
+  display: block;
+  transition: all 0.2s 0s ease-out;
+  .head {
+    padding: 1px @padding-medium;
+    background: lighten(@pallet-background-footer, 5%);
+    color:@pallet-color-light;
+  }
+
+  &.content, .content {
+    padding: @padding-medium;
+  }
+  &.link-card {
+    &:hover {
+      box-shadow: 0 1px 2px 1px darken(@pallet-border-primary, 10%);
+    }
+  }
+
+  &.ticket {
+    background: #f3dbc7; /* Old browsers */
+    background: -moz-linear-gradient(-45deg, #f3dbc7 0%, #e4a580 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, #f3dbc7 0%,#e4a580 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, #f3dbc7 0%,#e4a580 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f3dbc7', endColorstr='#e4c4ae',GradientType=1 );
+  }
+  &.success {
+    background: fade(@pallet-background-selected, 10%);
+  }
+
+  &.caution {
+    background: fade(@pallet-background-caution, 10%);
+  }
+
+  &.dark {
+    background: darken(@pallet-background-light, 5%);
+  }
+  &.stats {
+    border:1px solid @pallet-border-dark;
+  }
+  &.black {
+    background: lighten(@pallet-background-footer, 5%);
+    color: @pallet-color-light;
+  }
+
+  &.round {
+    border-radius: 100%;
+    text-align: center;
+    width: 270px;
+    margin: @margin-large auto;
+    height: 270px;
+    position: relative;
+    border: 1px solid fade(@pallet-theme, 40%);
+
+    .content {
+      display: block;
+      position: absolute;
+      padding: @padding-medium;
+      top: 50%;
+      transform: translateY(-50%);
+      -webkit-transform: translateY(-50%);
+    }
+  }
+}
