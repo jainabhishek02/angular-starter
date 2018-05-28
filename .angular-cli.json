@@ -22,7 +22,10 @@
         "../node_modules/bootstrap/dist/css/bootstrap.min.css",
         "styles.less"
       ],
-      "scripts": [],
+      "scripts": [
+        "jquery-3.3.1.min.js",
+        "global.js"
+      ],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",
