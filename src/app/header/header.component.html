@@ -1,46 +1,40 @@
-<header class="header-section">
-
-  <!-- top-bar -->
-  <nav class="navbar nav-One hidden-sm hidden-xs">
-    <div class="container">
-      <div class="collapse navbar-collapse">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="index.html">
-            <img src="../../assets/images/logo/houseofgod-theme.png" alt="logo" style="max-width: 200px;width: 100%;vertical-align: middle;">
-          </a>
-        </div>
-        <ul class="nav navbar-nav navbar-right">
-          <li class="dropdown"><a href="index.html"> <i class="fa fa-home fa-2x"></i></a></li>
-          <li class="dropdown"><a href="#">Services <i class="fa fa-angle-down" aria-hidden="true"></i></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">DevOps  <i class="fa fa-angle-right" aria-hidden="true"></i></a>
-                <ul class="single-dropdown">
-                  <li><a href="devops-as-service.html">DevOps-as-a-Service </a></li>
-                  <li><a href="devops-products.html">DevOps-Products </a></li>
-
-                </ul>
-              </li>
-
-
-              <li> <a href="application-engineering.html">Application Engineering</a></li>
-              <li> <a href="software-testing.html">Software Testing </a></li>
-
-            </ul>
-          </li>
-          <li><a href="why-us.html">Why Us </a></li>
-          <li><a href="industries.html">Industries </a></li>
-          <li><a href="who-we-are.html">Who We Are</a></li>
-          <li><a href="career.html">Career</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
-        </ul>
-
-
-      </div>
-      <!--/.nav-collapse -->
-    </div>
-    <!-- container -->
-  </nav>
-  <div class="small-view visible-sm visible-xs">
-    <div class="container"> <a class="navbar-brand" href="index.html"><img src="../../assets/images/logo/houseofgod-theme.png" alt="logo"></a> <span class="menu-toggle visible-xs visible-sm"><i class="fa fa-bars" aria-hidden="true"></i></span> </div>
+<header class="navbar">
+  <h2 class="navbar__title">
+    <a class="navbar__title__anchor" title="Free Stock Photos" data-track-action="navbar" data-track-label="logo" href="/">
+      <span class="sr-only">LOGO</span>
+    </a> </h2>
+  <div class="navbar__mobile-ctrl visible-md">
+    <button class="navbar__toggle navbar__toggle--menu" type="button" data-track-action="navbar" data-track-label="mobile-menu">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="navbar__toggle__bar"></span>
+      <span class="navbar__toggle__bar"></span>
+      <span class="navbar__toggle__bar"></span>
+    </button>
+  </div>
+  <div class="navbar__md-nav navbar__md-nav--search navbar__md-nav--open">
+    <form class="navbar__search pull-left" role="search" method="get" action="/">
+      <input required="required" placeholder="Search for free photos" name="s" type="search" autocapitalize="none" #imageName (keypress)="handleInput($event, imageName.value)">
+      <button class="navbar__search__icon" title="Search" data-track-action="navbar" data-track-label="searchicon" (click)="search(imageName.value);">Search</button>
+    </form>
+  </div>
+  <div class="navbar__md-nav navbar__md-nav--menu">
+    <ul class="navbar__list pull-right">
+      <li class="navbar__dropdown">
+        <a href="#"  data-is-clickable="true" class="js-dropdown" data-track-action="navbar" data-track-label="browse" data-initialized="true">
+          Explore
+        </a>
+      </li>
+      <li>
+        <a href="#" title="Stock photo license" data-track-action="navbar" data-track-label="license">License</a>
+      </li>
+      <li>
+        <a href="#" data-track-action="navbar" data-track-label="tools">Tools</a>
+      </li>
+      <li>
+        <a href="#" class="btn-primary navbar__cta" data-track-action="navbar" data-track-label="submit">
+          Upload Photos
+        </a>
+      </li>
+    </ul>
   </div>
 </header>

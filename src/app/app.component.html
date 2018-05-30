@@ -1,81 +1,23 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<app-header></app-header>
-
-<section class="contact-section section-padding">
-  <div class="container">
-    <div class="section-title text-center">
-
-      <div class="border"></div>
-      <h2>Let’s Get In Touch</h2>
-
-
-      <button class="btn btn-primary">Drop us a line</button>
-      <button class="btn btn-primary"><a href="career.html" style="color:#fff;">Career</a></button>
-    </div> <!-- section-title -->
-
-    <div class="row">
-      <div class="col-md-6" style="border:1px solid #ccc; padding:10px 10px;">
-        <div id="googleMap">
-          <p>Thank you for your interest in Brainstack Technologies. We appreciate the opportunity to interact with you. Please feel free to contact us at following details <br>
-          </p>
-
-
-          <!-- Divider -->
-          <div class="hr1" style="margin-bottom:10px;"></div>
-
-          <!-- Info - Icons List -->
-          <ul class="icons-list">
-            <li style="padding-bottom:7px;"><i class="fa fa-globe "></i>      <strong>Address&nbsp;&nbsp; : </strong>7th Floor, Plot A-14, Eco Towers, <br>
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sector 125 Noida, UP, 201301 </li>
-
-            <li style="padding-bottom:7px; "><i class="fa fa-envelope-o "></i> <strong>Email &nbsp;&nbsp;&nbsp; &nbsp; : </strong> info@brainstacktechnologies.com</li>
-
-            <li style="padding-bottom:7px;"><i class="fa fa-phone "></i>      <strong>Phone &nbsp;&nbsp;&nbsp;&nbsp; : </strong> +91-9999-105-815</li>
-
-            <li style="padding-bottom:7px;"><i class="fa fa-link "></i>       <strong>Website &nbsp;: </strong> http://www.brainstacktechnologies.com</li>
-          </ul>
-
-        </div>
-      </div>
-
-      <div class="col-md-6">
-        <div class="form-section">
-          <h4 id="successmsg" style="color:green"></h4>
-          <h4 id="msg" style="color:red"></h4>
-          <form class="contact-form" method="POST">
-            <div class="form-group">
-              <input id="name" name="name" type="text" class="form-control" required="" placeholder="Name">
-            </div>
-
-            <div class="form-group">
-              <input class="domainSearchBar form-control" id="email" name="email" type="email" required="" placeholder="Email">
-            </div>
-
-            <div class="form-group">
-              <input id="website" type="text" class="form-control" placeholder="Website" name="website">
-
-            </div>
-            <div class="form-group">
-              <input id="subject" type="text" class="form-control" required="" placeholder="Subject" name="subject">
-
-            </div>
-
-            <div class="form-group">
-              <textarea id="message" name="message" class="form-control form-message" rows="6" required="" placeholder="Your Message"></textarea>
-            </div>
-
-            <div class="form-group">
-              <button class="btn btn-default" id="submitbtn" value="submit" type="button">Send</button>
-            </div>
-          </form>
-
-
-          <script>
-          </script>
-
-        </div> <!-- mail-section -->
-      </div>
+<app-header (text)="searchString($event)"></app-header>
+<div class="container-fluid home-page">
+  <div class="title-tabs">
+    <h2 class="title-tabs__title">Free Stock Photos</h2>
+    <a class="title-tabs__tab js-home-link js-home-trending title-tabs__tab--active"  data-name="js-home-trending" href="/">Most Recent </a> |
+    <div  *ngIf="cokieeValue.length > 0" style="display: inline-block;">
+      <a class="title-tabs__tab js-home-link js-home-new" href="#" *ngFor="let tag of cokieeValue">
+        <span style="border: 1px solid #333;padding: 5px 10px;margin-right: 10px; background:#333; color: #fff;">{{tag}}</span>
+      </a>
     </div>
   </div>
-</section>
+  <app-images [message]="textMessage" (imageChange)="imageDetails($event)"></app-images>
+  <div class="js-loading" data-page="2">
+    <div class="spinner">
+      <div></div><div></div><div></div><div></div>
+    </div>
+    <div class="ie-fallback">Fetching more photos…</div>
+  </div>
+</div>
+<app-uploader></app-uploader>
+<app-magic-box [image]="currentImage"></app-magic-box>
 <app-footer></app-footer>

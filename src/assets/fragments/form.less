@@ -32,6 +32,81 @@ Overriding form styles
   }
 }
 
+.form {
+  font-size: 16px;
+}
+.form--wrap {
+  position: relative;
+}
+.form--padded {
+  padding: 16px;
+}
+.form--compact {
+  font-size: 14px;
+  .form__input {
+    font-size: 14px;
+  }
+  .form__group {
+    margin-bottom: 20px;
+  }
+}
+.form__label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: @color_10;
+  font-weight: 700;
+}
+.form__input {
+  font-size: 16px;
+  width: 100%;
+}
+.form__input[type=text] {
+  border-width: 2px;
+}
+.form__input[type=email] {
+  border-width: 2px;
+}
+.form__input[type=password] {
+  border-width: 2px;
+}
+.form__description {
+  color: @color_3;
+  font-weight: 400;
+  line-height: 1.5;
+}
+.form__group {
+  margin-bottom: 30px;
+  >* {
+    vertical-align: middle;
+  }
+}
+.form__button {
+  float: right;
+  font-size: 16px;
+}
+.form__cancel {
+  float: right;
+  margin: 5px 10px;
+  padding: 10px;
+  font-size: 14px;
+  text-decoration: none;
+  color: @color_3;
+}
+.form__delete {
+  display: inline-block;
+  margin-top: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.form__corner--bottom-left {
+  margin: auto;
+  position: absolute;
+  bottom: 30px;
+  right: auto;
+  left: 0;
+  top: auto;
+}
 .err-border {
   &input, &.form-control{
     border: 1px solid @pallet-border-error;
