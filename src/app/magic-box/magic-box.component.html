@@ -1,0 +1,30 @@
+<div class="magic-box">
+  <div class="close js-close" (click)="closeModal()">
+    <img src="../../assets/images/close-button.svg" width="30"  alt="close"/>
+  </div>
+  <div class="text-center content">
+    <div class="userwire">
+      <div class="detail">
+        <div class="row">
+          <div class="col-xs-12" style="padding-right:0;">
+            <h1 class="headline">Details</h1>
+          </div>
+          <div class="col-xs-12" *ngIf="currentImage">
+            <h3>{{currentImage.title}}</h3>
+            <div>
+              <label>Public</label>
+              <input type="checkbox" [checked]="currentImage['ispublic']">
+              <label>Family</label>
+              <input type="checkbox" [checked]="currentImage['isfamily']">
+              <label>Friend</label>
+              <input type="checkbox" [checked]="currentImage['isfriend']">
+            </div>
+            <a class="js-photo-link text-center"  data-initialized="true">
+              <img [srcset]="currentImage.url_m"  width="350" height="350" style="background:rgb(60,51,41); margin:20px auto;" class="photo-item__img" [alt]="currentImage.title" [src]="currentImage.url_m">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

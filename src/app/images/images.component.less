@@ -1,0 +1,212 @@
+@import "../../assets/variables";
+
+
+/* ImagesComponent's private CSS styles */
+
+
+.photos {
+  &:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+  }
+  padding-bottom: 20px;
+  clear: both;
+}
+.photo-details {
+  &:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+  }
+  padding: 10px 20px;
+}
+
+.photo-item {
+  float: left;
+  margin-bottom: 10px;
+  position: relative;
+  &:hover {
+    .photo-item__info {
+      opacity: 1;
+      -webkit-transition-delay: .1s;
+      transition-delay: .1s;
+    }
+    .photo-item__photographer {
+      opacity: 1;
+      -webkit-transition-delay: .1s;
+      transition-delay: .1s;
+    }
+    &:before {
+      opacity: 1;
+      -webkit-transition-delay: .1s;
+      transition-delay: .1s;
+    }
+    .photo-item__center-text {
+      opacity: .8;
+    }
+    .btn-like--small.btn-like--collect.btn-like--active {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+    }
+  }
+}
+.photo-item__img {
+  display: block;
+  height: 100%;
+}
+.photo-item__info {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  -webkit-transition: opacity .2s,-webkit-transform .2s ease-in-out 0s;
+  transition: opacity .2s,-webkit-transform .2s ease-in-out 0s;
+  transition: opacity .2s,transform .2s ease-in-out 0s;
+  transition: opacity .2s,transform .2s ease-in-out 0s,-webkit-transform .2s ease-in-out 0s;
+}
+.photo-item--video {
+  a {
+    &:before {
+      content: "▶";
+      position: absolute;
+      z-index: 1;
+      width: 44px;
+      height: 44px;
+      left: 45%;
+      left: calc(50% - 22px);
+      top: 45%;
+      top: calc(50% - 22px);
+      font-size: 24px;
+      color: @color_6;
+      text-align: center;
+      line-height: 37px;
+      text-indent: 4px;
+      border: 4px solid;
+      border-radius: 100%;
+      text-shadow: 1px 1px 1px rgba(0,0,0,.3);
+      -webkit-box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+      box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+    }
+  }
+  .photo-item__video {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+.photo-item--overlay {
+  &:before {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 80px;
+    background: -webkit-gradient(linear,left bottom,left top,from(rgba(0,0,0,0.3)),to(transparent));
+    background: linear-gradient(to top,rgba(0,0,0,0.3) 0%,transparent 100%);
+    opacity: 0;
+    -webkit-transition: opacity .2s;
+    transition: opacity .2s;
+  }
+}
+.photo-item__photographer {
+  max-width: calc(100% - 70px);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  text-decoration: none;
+  color: @color_6;
+  white-space: nowrap;
+  opacity: 0;
+  -webkit-transition: opacity .2s;
+  transition: opacity .2s;
+}
+.photo-item__name {
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+  max-width: calc(100% - 40px);
+  margin-right: 40px;
+  margin-left: 2.5px;
+  display: inline-block;
+  vertical-align: middle;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  color: @color_11;
+  &:hover {
+    color: @color_6;
+  }
+}
+.photo-item__avatar {
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: 50%;
+  text-indent: -9999px;
+}
+.photo-item__center-text {
+  position: absolute;
+  right: 0;
+  bottom: 20px;
+  left: 0;
+  opacity: 0;
+  text-align: center;
+  color: @color_6;
+  font-weight: 700;
+}
+.button {
+  background-color: #eee;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: hand;
+  font-family: Arial;
+}
+
+button:hover {
+  background-color: #cfd8dc;
+}
+
+button.delete {
+  position: relative;
+  left: 24em;
+  top: -32px;
+  background-color: gray !important;
+  color: white;
+  display: inherit;
+  padding: 5px 8px;
+  width: 2em;
+}
+
+input {
+  font-size: 100%;
+  margin-bottom: 2px;
+  width: 11em;
+}
+
+
+@media (max-width:425px) {
+  .photo-item {
+    float: none;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+@media (max-width:900px) {
+  .photo-row__container {
+    overflow-x: scroll;
+    overflow-scrolling: touch;
+  }
+  .photo-row__grid {
+    min-width: 900px;
+  }
+}
