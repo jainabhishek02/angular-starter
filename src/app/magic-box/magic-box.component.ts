@@ -20,7 +20,7 @@ export class MagicBoxComponent implements OnInit, OnChanges {
     this.modal = document.querySelector(".magic-box");
     this.overlay = document.querySelector(".fixed-overlay");
     this.modal.classList.remove("show");
-    document.querySelector(".fixed-overlay").classList.remove('noscroll');;
+    document.querySelector("body").classList.remove('noscroll');;
     this.overlay.classList.add("hide");
   }
   ngOnChanges(changes : {[propKey:string]: SimpleChange}) {

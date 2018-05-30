@@ -1,6 +1,7 @@
-import {Component, OnInit, Input, OnChanges, SimpleChange, EventEmitter, Output, HostListener} from '@angular/core';
+import {Component, Inject, OnInit, Input, OnChanges, SimpleChange, EventEmitter, Output, HostListener, ViewContainerRef} from '@angular/core';
 import { Image } from './image';
 import { ImagesService } from '../images.service';
+import { ComponentLoaderService  } from '../component-loader.service'
 
 @Component({
   selector: 'app-images',
@@ -10,19 +11,20 @@ import { ImagesService } from '../images.service';
 })
 export class ImagesComponent  implements OnChanges {
   images: Image[];
+  pageImages : Image[];
   editImage: Image; // the hero currently being edited
 
   @Output() imageChange: EventEmitter<Image> = new EventEmitter();
   @Input('message') message: string;
-  constructor(private imagesService: ImagesService) { }
+  constructor(private imagesService: ImagesService, @Inject(ComponentLoaderService) componentLoaderService, @Inject(ViewContainerRef) viewContainerRef) {
+    componentLoaderService.setRootViewContainerRef(viewContainerRef);
+    componentLoaderService.addDynamicComponent();
+  }
 
 
   ngOnChanges(changes : {[propKey:string]: SimpleChange}) {
-    for(let p in changes){
-      let c = changes[p];
-      if(c.currentValue){
-        this.search(c.currentValue);
-      }
+    if(changes.message && changes.message.currentValue != changes.message.previousValue){
+      this.search(changes.message.currentValue);
     }
   }
 

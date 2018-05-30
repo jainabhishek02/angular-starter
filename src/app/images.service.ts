@@ -29,7 +29,7 @@ export class ImagesService {
     method:'flickr.photos.getRecent',
     nojsoncallback:'1',
     page:'1',
-    per_page:'21',
+    per_page:'42',
     text:''
   }
   @Output() change: EventEmitter<boolean> = new EventEmitter();
@@ -46,8 +46,6 @@ export class ImagesService {
     this.textString = text;
     this.change.emit(this.isChange);
   }
-
-
 
   /** GET heroes from the server */
   getImages (): Observable<Image[]> {
@@ -69,13 +67,26 @@ export class ImagesService {
 
   /* GET heroes whose name contains search term */
   searchImages(term: string): Observable<Image[]> {
-    term = term.trim();
-    this.urlJson.text = term;
-    this.finalUrl = this.imagesUrl + this.jsonToQueryString(this.urlJson);
-    return this.http.get<Image[]>(this.finalUrl)
-      .pipe(
-        catchError(this.handleError<Image[]>('searchImages', []))
-      );
+    if(term){
+      term = term.trim();
+      this.urlJson.text = term;
+      this.finalUrl = this.imagesUrl + this.jsonToQueryString(this.urlJson);
+      return this.http.get<Image[]>(this.finalUrl)
+        .pipe(
+          catchError(this.handleError<Image[]>('searchImages', []))
+        );
+    }
+  }
+  /* GET page Images whose page */
+  pageImages(page: string): Observable<Image[]> {
+    if(page){
+      this.urlJson.page = page;
+      this.finalUrl = this.imagesUrl + this.jsonToQueryString(this.urlJson);
+      return this.http.get<Image[]>(this.finalUrl)
+        .pipe(
+          catchError(this.handleError<Image[]>('searchImages', []))
+        );
+    }
   }
 
   //////// Save methods //////////

@@ -11,6 +11,7 @@
     </div>
   </div>
   <app-images [message]="textMessage" (imageChange)="imageDetails($event)"></app-images>
+  <app-page-images [pageImages]="pageImages"></app-page-images>
   <div class="js-loading" data-page="2">
     <div class="spinner">
       <div></div><div></div><div></div><div></div>
@@ -18,6 +19,7 @@
     <div class="ie-fallback">Fetching more photos…</div>
   </div>
 </div>
+
 <app-uploader></app-uploader>
 <app-magic-box [image]="currentImage"></app-magic-box>
 <app-footer></app-footer>

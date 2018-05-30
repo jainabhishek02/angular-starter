@@ -1,38 +1,34 @@
 <div class="photos" *ngIf="images && images.length > 0" data-row-grid="{&quot;minMargin&quot;:10,&quot;maxMargin&quot;:10,&quot;itemSelector&quot;:&quot;.photo-item&quot;,&quot;firstItemClass&quot;:&quot;first-item&quot;,&quot;lastRowClass&quot;:&quot;last-row&quot;,&quot;resize&quot;:true,&quot;minWidth&quot;:426}">
   <div *ngFor="let image of images; let i = index;">
-    <article class="photo-item photo-item--overlay" (click)="showDetails(image)" *ngIf="i%4 === 0" [ngClass]="{'first-item': i%4 === 1}" [style.width]="image.width_m" [style.height]="image.height_m"  style="margin-right: 10px;">
+    <article class="photo-item photo-item--overlay" (click)="showDetails(image)" [ngClass]="{'first-item': i%4 === 1}"  style="margin-right: 10px; width: 335px; height:375px;">
       <a class="js-photo-link"  data-initialized="true">
-        <img [srcset]="image.url_m"  width="350" height="350" style="background:rgb(60,51,41)" class="photo-item__img" [alt]="image.title" [src]="image.url_m">
+        <img [srcset]="image.url_m"  style="background:rgb(60,51,41); max-width: 100%; max-height:100%;" class="photo-item__img" [alt]="image.title" [src]="image.url_m">
       </a>
       <a href="#" class="photo-item__photographer">
-      <img class="photo-item__avatar" height="30" width="30" src="https://images.pexels.com/users/avatars/91955/rawpixel-com-856.png?w=60&amp;h=60&amp;fit=crop&amp;crop=faces" alt="Rawpixel com 856">
       <span class="photo-item__name">rawpixel.com</span>
     </a>
     </article>
-    <article class="photo-item photo-item--overlay" (click)="showDetails(image)" *ngIf="i%4 === 1" [style.width]="image.width_l" [style.height]="image.height_l"  style="margin-right: 10px;">
+    <article class="photo-item photo-item--overlay" (click)="showDetails(image)" *ngIf="i%4 === 1" style="margin-right: 10px; width: 335px; height:375px;">
       <a class="js-photo-link"  data-initialized="true">
-        <img [srcset]="image.url_l"  width="650" height="450" style="background:rgb(60,51,41)" class="photo-item__img" [alt]="image.title" [src]="image.url_l">
+        <img [srcset]="image.url_l"  style="background:rgb(60,51,41); max-width: 100%; max-height:100%;" class="photo-item__img" [alt]="image.title" [src]="image.url_l">
       </a>
       <a href="#" class="photo-item__photographer">
-      <img class="photo-item__avatar" height="30" width="30" src="https://images.pexels.com/users/avatars/91955/rawpixel-com-856.png?w=60&amp;h=60&amp;fit=crop&amp;crop=faces" alt="Rawpixel com 856">
       <span class="photo-item__name">rawpixel.com</span>
     </a>
     </article>
-    <article class="photo-item photo-item--overlay" (click)="showDetails(image)" *ngIf="i%4 === 2" [style.width]="image.width_c" [style.height]="image.height_c"  style="margin-right: 10px;">
+    <article class="photo-item photo-item--overlay" (click)="showDetails(image)" *ngIf="i%4 === 2" style="margin-right: 10px; width: 335px; height:375px;">
       <a class="js-photo-link"  data-initialized="true">
-        <img [srcset]="image.url_c"  width="650" height="450" style="background:rgb(60,51,41)" class="photo-item__img" [alt]="image.title" [src]="image.url_c">
+        <img [srcset]="image.url_c" style="background:rgb(60,51,41); max-width: 100%; max-height:100%;" class="photo-item__img" [alt]="image.title" [src]="image.url_c">
       </a>
       <a href="#" class="photo-item__photographer">
-      <img class="photo-item__avatar" height="30" width="30" src="https://images.pexels.com/users/avatars/91955/rawpixel-com-856.png?w=60&amp;h=60&amp;fit=crop&amp;crop=faces" alt="Rawpixel com 856">
       <span class="photo-item__name">rawpixel.com</span>
     </a>
     </article>
-    <article class="photo-item photo-item--overlay" (click)="showDetails(image)" *ngIf="i%4 === 3" [style.width]="image.width_o" [style.height]="image.height_o"  style="margin-right: 10px;">
+    <article class="photo-item photo-item--overlay" (click)="showDetails(image)" *ngIf="i%4 === 3"  style="margin-right: 10px; width: 335px; height:375px;">
       <a class="js-photo-link"  data-initialized="true">
-        <img [srcset]="image.url_o"  width="650" height="450" style="background:rgb(60,51,41)" class="photo-item__img" [alt]="image.title" [src]="image.url_o">
+        <img [srcset]="image.url_o" style="background:rgb(60,51,41);max-width: 100%; max-height:100%;" class="photo-item__img" [alt]="image.title" [src]="image.url_o">
       </a>
       <a href="#" class="photo-item__photographer">
-      <img class="photo-item__avatar" height="30" width="30" src="https://images.pexels.com/users/avatars/91955/rawpixel-com-856.png?w=60&amp;h=60&amp;fit=crop&amp;crop=faces" alt="Rawpixel com 856">
       <span class="photo-item__name">rawpixel.com</span>
     </a>
     </article>
